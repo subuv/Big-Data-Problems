@@ -1,0 +1,22 @@
+Found top 100 universities with highest page rank using Amazon Elastic Map Reduce (EMR) to implement the pageRank algorithm on a Wikipedia dataset.
+Wikipedia offers a free copy of all of its available content to interested users. The size of the data is approximately 10GB compressed and about 45GB uncompressed). The Wikipedia dataset is a dump of the English–language Wikipedia articles which is available in XML format. The XML file contains some meta information about each page as well as the title, and the actual text of the page. A single page is represented as follows (omitting some attributes and meta information)
+                    <page>
+                    <title>Title</title>
+                    ...
+                    <text ...>
+                    Body of page
+                    [[link text]]
+                    </text>
+                    </page>
+
+PageRank is a function that assigns a real number to each page in the Web. The intent is that the higher the PageRank of a page, the more important it is. The page rank  of a page  is calculated as follows:
+
+                    PR(p_i) = 1-d/N + d     ∑       PR(p_j)/L(p_j)
+                                        p_j ϵ M(p_i)
+
+where
+•	d: is a constant (it is typically set to 0.85)
+•	N: is total number of pages ( In this case Wikipedia articles)
+•	M(p_i): The set of all incoming links to p_i
+•	L(p_j): The number of outgoing links from p_j
+At the initial point, each page is initialized with PageRank 1/N and the sum of the PageRank is 1. But the sum will gradually decrease with the iterations. In this work, I ran the algorithm for 10 iterations and printed out the page rank for Wikipedia pages after the 10th iteration.
