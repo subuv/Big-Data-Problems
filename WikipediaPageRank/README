@@ -9,7 +9,7 @@ Wikipedia offers a free copy of all of its available content to interested users
                     </text>
                     </page>
 
-PageRank is a function that assigns a real number to each page in the Web. The intent is that the higher the PageRank of a page, the more important it is. The page rank  of a page  is calculated as follows:
+PageRank is a function that assigns a real number to each page in the Web. The intent is that the higher the PageRank of a page, the more important it is. The page rank of a page is calculated as follows:
 
                     PR(p_i) = 1-d/N + d     ∑       PR(p_j)/L(p_j)
                                         p_j ϵ M(p_i)
