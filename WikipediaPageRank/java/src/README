@@ -1,0 +1,6 @@
+A brief description of each file is listed below:
+
+WikipediaPageRankDriver.java - The driver program for the MapReduce job to extract the wikilinks from the XML data set.
+WikipediaPageRankMapper.java - The Mapper program for the MapReduce job to extract wikilinks from the XML data set.
+WikiLinksFilter.txt - A list of HIVEQL queries that removes/filters out only valid wikilinks while removing the invalid/red links from the data set.
+PageRank.pig - A PIG script to compute the PageRank for a single iteration.
