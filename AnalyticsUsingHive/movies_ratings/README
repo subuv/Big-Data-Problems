@@ -1,0 +1,9 @@
+Used Hive to take a movie rating dataset and, for every user: 
+  •	compute the average ratings given by the user for different movie genres, and
+  •	sort the output first by the user ids (ascending) and then by the average rating (descending)
+  
+Used an array to store all genres for a movie while creating a table in Hive. The genres are separated by ‘|’, so created a table with collection items tha are separated by ‘|’.  Then to put each genre in its own row, used the “Expand” function along with “Lateral view”. 
+
+There are two input files
+movies.dat: This file contains movies information and has the following format (genres are delimited by “|”).
+ratings.dat: This file contains ratings given by users to different movies and have the following format.
