@@ -1,0 +1,16 @@
+CREATE TABLE wikiLinks
+(inLink STRING, outLink STRING) 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+
+LOAD DATA local INPATH '/usr/local/JarFiles/rankOut2/part-r-00000'
+OVERWRITE INTO TABLE wikiLinks;
+
+CREATE VIEW tempView AS
+SELECT a.inLink, a.outLink FROM wikiLinks a 
+JOIN wikiLinks b
+ON(a.outLink = b.inLink);
+
+INSERT OVERWRITE LOCAL DIRECTORY '/usr/local/JarFiles/WikiLinkFilt' 
+ROW FORMAT DELIMITED 
+FIELDS TERMINATED BY '\t' 
+select * from tempView;
